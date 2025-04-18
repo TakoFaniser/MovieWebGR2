@@ -1,21 +1,21 @@
-## Clone repo về thì hãy cài nodejs cho web để local host:
+## Clone repo về thì hãy cài nodejs cho web để local host
 
-### `npm install`
+`npm install`
 
-## Trước khi chạy Web cần cài 1 số thư viện và chuyển xuống react17:
+## Trước khi chạy Web cần cài 1 số thư viện và chuyển xuống react17
 
-### `npm i react-router-dom axios query-string sass swiper@6.8.4 --save`
+`npm i react-router-dom axios query-string sass swiper@6.8.4 --save`
 
-### `npm i react@17 react-dom@17`
+`npm i react@17 react-dom@17`
 
-## Chạy web:
+## Chạy web
 
-### `npm start` 
+`npm start` 
 
-## Build:
+## Build
 
-### `npm run build`
+`npm run build`
 
-## Nếu không cài được thư viện thì hãy:
+## Nếu không cài được thư viện thì hãy
 
-### `npm uninstall @testing-library/react`
+`npm uninstall @testing-library/react`
