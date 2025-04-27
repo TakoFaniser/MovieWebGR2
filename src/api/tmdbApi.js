@@ -1,3 +1,4 @@
+import Genre from "../pages/genre/Genre";   
 import axiosClient from "./axiosClient";
 
 export const category = {
@@ -5,17 +6,50 @@ export const category = {
     tv: 'tv'
 }
 
-export const movieType = {
-    upcoming: 'upcoming',
-    popular: 'popular',
-    top_rated: 'top_rated'
-}
-
 export const tvType = {
     popular: 'popular',
     top_rated: 'top_rated',
-    on_the_air: 'on_the_air'
+    upcoming: 'upcoming'
 }
+
+export const movieType = {
+    
+    popular: 'popular',
+    top_rated: 'top_rated',
+    upcoming: 'upcoming'
+}
+
+export const genre = [
+]
+
+export const getMovieByGenre = async (genreId, params) => {
+    try {
+        const movieRes = await axiosClient.get('discover/movie', {
+            params: {
+                with_genres: genreId,
+                ...params,
+            },
+        });
+
+        const tvRes = await axiosClient.get('discover/tv', {
+            params: {
+                with_genres: genreId,
+                ...params,
+            },
+        });
+
+        const combinedResults = [...(movieRes.results || []), ...(tvRes.results || [])];
+
+        return {
+            results: combinedResults,
+            total_pages: Math.max(movieRes.total_pages || 0, tvRes.total_pages || 0),
+        };
+    } catch (err) {
+        console.error('Error fetching movies and tv shows by genre:', err);
+        return { results: [], total_pages: 0 };
+    }
+};
+
 
 const tmdbApi = {
     getMoviesList: (type, params) => {
@@ -44,6 +78,14 @@ const tmdbApi = {
     },
     similar: (cate, id) => {
         const url = category[cate] + '/' + id + '/similar';
+        return axiosClient.get(url, {params: {}});
+    },
+    personDetail: (personId) => {
+        const url = `person/${personId}`;
+        return axiosClient.get(url, {params: {}});
+    },
+    personMovieCredits: (personId) => {
+        const url = `person/${personId}/movie_credits`;
         return axiosClient.get(url, {params: {}});
     },
 }

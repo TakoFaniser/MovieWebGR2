@@ -6,6 +6,7 @@ import './header.scss';
 
 import logo from '../../assets/tmovie.png';
 
+
 const headerNav = [
     {
         display: 'Home',
@@ -18,6 +19,10 @@ const headerNav = [
     {
         display: 'TV Series',
         path: '/tv'
+    },
+    {
+        display: 'Login',
+        path: '/login'
     }
 ];
 

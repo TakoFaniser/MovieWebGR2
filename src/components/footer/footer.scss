@@ -9,6 +9,9 @@
 
     &__content {
         max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         &__logo {
             @include flex(center, center);
@@ -18,15 +21,19 @@
         &__menus {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
 
             @include mobile {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
 
         &__menu {
-            @include flex(flex-start, flex-start);
+            display: flex;
             flex-direction: column;
+            align-items: center;
             margin-top: 1rem;
 
             font-size: 1.5rem;

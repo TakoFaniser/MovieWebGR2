@@ -10,16 +10,18 @@ import { category } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
 const MovieCard = props => {
+    const item = props.item;
 
-    const item  = props.item;
+    // Nếu item có 'title' => movie, nếu có 'name' => tv series
+    const itemCategory = item.title ? category.movie : category.tv;
 
-    const link = '/' + category[props.category] + '/' + item.id;
+    const link = '/' + itemCategory + '/' + item.id;
 
     const bg = apiConfig.w500Image(item.poster_path || item.backdrop_path);
 
     return (
         <Link to={link}>
-            <div className="movie-card" style={{backgroundImage: `url(${bg})`}}>
+            <div className="movie-card" style={{ backgroundImage: `url(${bg})` }}>
                 <Button>
                     <i className="bx bx-play"></i>
                 </Button>

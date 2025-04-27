@@ -1,3 +1,11 @@
+# TÍNH NĂNG CỦA WEB
+
+## 
+
+
+
+
+# HƯỚNG DẪN CÀI
 ## Clone repo về thì hãy cài nodejs cho web để local host
 
 ```

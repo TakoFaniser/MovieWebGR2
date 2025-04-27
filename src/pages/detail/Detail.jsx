@@ -42,17 +42,36 @@ const Detail = () => {
                                 <div className="genres">
                                     {
                                         item.genres && item.genres.slice(0, 5).map((genre, i) => (
-                                            <span key={i} className="genres__item">{genre.name}</span>
+                                            <span 
+                                                key={i} 
+                                                className="genres__item" 
+                                                onClick={() => window.location.href = `/genre/${genre.id}`}>
+                                                {genre.name}
+                                            </span>
                                         ))
                                     }
+                                    
+                                </div>
+                                <div className="info">
+                                    {item.number_of_episodes && (
+                                        <p>Number of Episodes: {item.number_of_episodes}</p>
+                                    )}
+                                    {item.runtime && (
+                                        <p>Run Time: {item.runtime} minutes</p>
+                                    )}
+                                
+                                    {item.release_date && (
+                                        <p>Release Date: {item.release_date}</p>
+                                    )}
                                 </div>
                                 <p className="overview">{item.overview}</p>
                                 <div className="cast">
                                     <div className="section__header">
                                         <h2>Casts</h2>
                                     </div>
-                                    <CastList id={item.id}/>
+                                    <CastList id={item.id} clickable={true} />
                                 </div>
+                            
                             </div>
                         </div>
                         <div className="container">

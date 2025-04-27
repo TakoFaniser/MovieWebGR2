@@ -18,12 +18,21 @@ const CastList = props => {
         }
         getCredits();
     }, [category, props.id]);
+
+    const handleImageClick = (id) => {
+        window.location.href = `/actor/${id}`;
+    };
+
     return (
         <div className="casts">
             {
                 casts.map((item, i) => (
                     <div key={i} className="casts__item">
-                        <div className="casts__item__img" style={{backgroundImage: `url(${apiConfig.w500Image(item.profile_path)})`}}></div>
+                        <div 
+                            className="casts__item__img" 
+                            style={{backgroundImage: `url(${apiConfig.w500Image(item.profile_path)})`}}
+                            onClick={() => handleImageClick(item.id)}
+                        ></div>
                         <p className="casts__item__name">{item.name}</p>
                     </div>
                 ))

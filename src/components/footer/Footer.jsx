@@ -14,26 +14,26 @@ const Footer = () => {
                 <div className="footer__content__logo">
                     <div className="logo">
                         <img src={logo} alt="" />
-                        <Link to="/">tMovies</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>tMovies</Link>
                     </div>
                 </div>
                 <div className="footer__content__menus">
                     <div className="footer__content__menu">
-                        <Link to="/">Home</Link>
-                        <Link to="/">Contact us</Link>
-                        <Link to="/">Term of services</Link>
-                        <Link to="/">About us</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Contact us</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Term of services</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>About us</Link>
                     </div>
                     <div className="footer__content__menu">
-                        <Link to="/">Live</Link>
-                        <Link to="/">FAQ</Link>
-                        <Link to="/">Premium</Link>
-                        <Link to="/">Pravacy policy</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Live</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>FAQ</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Premium</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Privacy policy</Link>
                     </div>
                     <div className="footer__content__menu">
-                        <Link to="/">You must watch</Link>
-                        <Link to="/">Recent release</Link>
-                        <Link to="/">Top IMDB</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>You must watch</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Recent release</Link>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>Top IMDB</Link>
                     </div>
                 </div>
             </div>
