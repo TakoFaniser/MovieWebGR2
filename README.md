@@ -3,7 +3,7 @@
 ## HomePage
 
 ![image](https://github.com/user-attachments/assets/5ac5be09-e120-4474-ba04-f91153ed996a)
-Có tính có thể kéo thả qua lại
+Có tính năng có thể kéo thả qua lại
 
 ![image](https://github.com/user-attachments/assets/80bc2efb-1250-402e-9718-8089192c52d6)
 Phía dưới gồm các hero-slides
@@ -31,10 +31,14 @@ Login và SignUp sử dụng Json đơn giản
 ## Genre
 
 ![image](https://github.com/user-attachments/assets/4ad90162-800f-4c87-a666-c3286a9a1845)
+![image](https://github.com/user-attachments/assets/19e0c7c3-71b1-4c42-b8bb-323200b19372)
+Nhấn vào tag thể loại của phim để hiện ra các phim tương tự
 
+## Actor
 
-
-
+![image](https://github.com/user-attachments/assets/874a45e9-1095-4b3f-b3d2-91b58364ed93)
+![image](https://github.com/user-attachments/assets/e18f0c55-465f-4680-ba14-bf34423e6367)
+Nhận là ảnh của diễn viễn sẽ hiện ra thông tin và các phim mà diễn viên đóng
 
 
 # HƯỚNG DẪN CÀI
