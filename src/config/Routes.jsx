@@ -11,7 +11,7 @@ import Actor from '../pages/actor/Actor';
 
 const Routes = () => {
     return (
-        <BrowserRouter>
+        
         <Switch>
             <Route
                 path='/actor/:id'
@@ -43,7 +43,7 @@ const Routes = () => {
                 component={Home}
             />
         </Switch>
-        </BrowserRouter>
+       
     );  
 }
 
