@@ -1,3 +1,4 @@
+Link Phụ: https://movie-web-gr-2-yajo.vercel.app/
 # TÍNH NĂNG CỦA WEB
 
 ## HomePage
