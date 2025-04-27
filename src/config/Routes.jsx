@@ -11,7 +11,7 @@ import Actor from '../pages/actor/Actor';
 
 const Routes = () => {
     return (
-        <BrowserRouter basename="/MovieWebGR2">
+        <BrowserRouter>
         <Switch>
             <Route
                 path='/actor/:id'
