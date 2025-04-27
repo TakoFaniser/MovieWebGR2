@@ -12,6 +12,7 @@ import Routes from './config/Routes';
 function App() {
     return (
         <BrowserRouter>
+        <BrowserRouter basename="/MovieWebGR2">
             <Route render={props => (
                 <>
                     <Header {...props}/>
@@ -19,6 +20,7 @@ function App() {
                     <Footer/>
                 </>
             )}/>
+        </BrowserRouter>
         </BrowserRouter>
     );
 }

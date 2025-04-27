@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
@@ -11,6 +11,7 @@ import Actor from '../pages/actor/Actor';
 
 const Routes = () => {
     return (
+        <BrowserRouter basename="/MovieWebGR2">
         <Switch>
             <Route
                 path='/actor/:id'
@@ -42,6 +43,7 @@ const Routes = () => {
                 component={Home}
             />
         </Switch>
+        </BrowserRouter>
     );  
 }
 
