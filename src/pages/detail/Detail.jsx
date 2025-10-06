@@ -10,6 +10,9 @@ import VideoList from './VideoList';
 
 import MovieList from '../../components/movie-list/MovieList';
 
+import {FacebookShareButton,TwitterShareButton,TelegramShareButton,FacebookIcon,TwitterIcon,TelegramIcon} from "react-share";
+import {Helmet} from 'react-helmet-async';
+
 const Detail = () => {
 
     const { category, id } = useParams();
@@ -25,11 +28,21 @@ const Detail = () => {
         getDetail();
     }, [category, id]);
 
+    const shareUrl = window.location.href;
+    
     return (
         <>
             {
                 item && (
                     <>
+                        <Helmet>
+                            <title>{`${item.title || item.name} - TakoMovies`}</title>
+                            <meta name="description" content={item.overview} />
+                            <meta property="og:title" content={`${item.title || item.name} - TakoMovies`} />
+                            <meta property="og:description" content={item.overview} />
+                            <meta property="og:image" content={apiConfig.w500Image(item.poster_path || item.backdrop_path)} />
+                            <meta property="og:url" content={window.location.href} />
+                        </Helmet>
                         <div className="banner" style={{backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})`}}></div>
                         <div className="mb-3 movie-content container">
                             <div className="movie-content__poster">
@@ -65,6 +78,32 @@ const Detail = () => {
                                     )}
                                 </div>
                                 <p className="overview">{item.overview}</p>
+                                <div className="social-share mt-2">
+                                    <h3 style={{color: 'white', marginBottom: '1rem'}}>Share:</h3>
+                                    <FacebookShareButton
+                                        url={shareUrl}
+                                        quote={`Watch now! ${item.title || item.name}!`}
+                                        hashtag="#takomovies"
+                                    >
+                                        <FacebookIcon size={40} round />
+                                    </FacebookShareButton>
+
+                                    <TwitterShareButton
+                                        url={shareUrl}
+                                        title={`Watch now! ${item.title || item.name}!`}
+                                        style={{ marginLeft: '1rem' }}
+                                    >
+                                        <TwitterIcon size={40} round />
+                                    </TwitterShareButton>
+
+                                    <TelegramShareButton
+                                        url={shareUrl}
+                                        title={`Watch now! ${item.title || item.name}!`}
+                                        style={{ marginLeft: '1rem' }}
+                                    >
+                                        <TelegramIcon size={40} round />
+                                    </TelegramShareButton>
+                                </div>
                                 <div className="cast">
                                     <div className="section__header">
                                         <h2>Casts</h2>
